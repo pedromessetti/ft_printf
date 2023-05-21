@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/16 11:39:24 by pmessett          #+#    #+#              #
-#    Updated: 2023/04/18 10:16:55 by pmessett         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = libftprintf.a
 
 CC = cc
@@ -18,13 +6,7 @@ CME = ar -rcs
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = ft_printf.c \
-ft_putchar.c \
-ft_putstr.c \
-ft_putnbr.c \
-ft_putnbr_base.c \
-ft_putunsnbr.c \
-ft_putaddr.c
+SRCS = ./src/ft_printf.c ./src/ft_putchar.c ./src/ft_putstr.c ./src/ft_putnbr.c ./src/ft_putnbr_base.c ./src/ft_putunsnbr.c ./src/ft_putaddr.c
                      
 OBJS = $(SRCS:.c=.o)
 
@@ -41,8 +23,4 @@ fclean:		clean
 
 re:			fclean all
 
-compile:	re
-	cc *.c
-
-run:	compile
-	./a.out
+run:	all clean
